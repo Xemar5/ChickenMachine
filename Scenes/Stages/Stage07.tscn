@@ -1,0 +1,132 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Stage.gd" type="Script" id=1]
+[ext_resource path="res://Resources/MetalPedestal.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Metal.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Components/Termometer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Components/Handle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Nest.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Components/Egg.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Components/BackArrow.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Components/Timer.tscn" type="PackedScene" id=9]
+
+[node name="Stage07" type="Position2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="MetalPedestal" type="Sprite" parent="." index="0"]
+
+position = Vector2( 310.635, 500 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="MetalPedestal2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 516.067, 500 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="MetalPedestal3" type="Sprite" parent="." index="2"]
+
+position = Vector2( 719.829, 500 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Metal" type="Sprite" parent="." index="3"]
+
+position = Vector2( 312.035, 324.508 )
+texture = ExtResource( 3 )
+
+[node name="Metal2" type="Sprite" parent="." index="4"]
+
+position = Vector2( 517.067, 323.28 )
+texture = ExtResource( 3 )
+
+[node name="Metal3" type="Sprite" parent="." index="5"]
+
+position = Vector2( 720.872, 326.964 )
+texture = ExtResource( 3 )
+
+[node name="Termometer" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 310.885, 334.504 )
+rotation = 1.5708
+scale = Vector2( 0.366385, 0.366385 )
+upper_threshold = 0.65
+lower_threshold = 0.35
+decay = 0.998
+
+[node name="Termometer2" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 517.145, 328.366 )
+rotation = 1.5708
+scale = Vector2( 0.366385, 0.366385 )
+upper_threshold = 0.65
+lower_threshold = 0.35
+decay = 0.998
+
+[node name="Termometer3" parent="." index="8" instance=ExtResource( 4 )]
+
+position = Vector2( 720.949, 327.138 )
+rotation = 1.5708
+scale = Vector2( 0.366385, 0.366385 )
+upper_threshold = 0.65
+lower_threshold = 0.35
+decay = 0.998
+
+[node name="Pedestal" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 310.846, 417.184 )
+scale = Vector2( 0.366385, 0.366385 )
+termometer_node = NodePath("../Termometer")
+
+[node name="Pedestal2" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 516.278, 410.503 )
+scale = Vector2( 0.366385, 0.366385 )
+termometer_node = NodePath("../Termometer2")
+
+[node name="Pedestal3" parent="." index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 721.711, 412.174 )
+scale = Vector2( 0.366385, 0.366385 )
+termometer_node = NodePath("../Termometer3")
+
+[node name="Nest" type="Sprite" parent="." index="12"]
+
+position = Vector2( 312.035, 290.131 )
+texture = ExtResource( 6 )
+
+[node name="Nest2" type="Sprite" parent="." index="13"]
+
+position = Vector2( 514.612, 287.676 )
+texture = ExtResource( 6 )
+
+[node name="Nest3" type="Sprite" parent="." index="14"]
+
+position = Vector2( 717.188, 288.904 )
+texture = ExtResource( 6 )
+
+[node name="Egg" parent="." index="15" instance=ExtResource( 7 )]
+
+position = Vector2( 314.711, 238.758 )
+scale = Vector2( 0.271971, 0.271971 )
+
+[node name="Egg2" parent="." index="16" instance=ExtResource( 7 )]
+
+position = Vector2( 514.578, 231.356 )
+scale = Vector2( 0.271971, 0.271971 )
+
+[node name="Egg3" parent="." index="17" instance=ExtResource( 7 )]
+
+position = Vector2( 738.503, 246.161 )
+rotation = 0.856213
+scale = Vector2( 0.271971, 0.271971 )
+
+[node name="Arrow" parent="." index="18" instance=ExtResource( 8 )]
+
+[node name="Timer" parent="." index="19" instance=ExtResource( 9 )]
+
+[connection signal="pressed" from="Arrow" to="." method="_on_back_pressed"]
+
+

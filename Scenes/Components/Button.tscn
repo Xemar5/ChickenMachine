@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/PedestalRed.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Pusher.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Button.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Button.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 81.0
+
+[node name="Button" type="Sprite" index="0"]
+
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+power = 0.05
+termometer_node = null
+
+[node name="Button" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="Button" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Area2D" index="0"]
+
+visible = false
+shape = SubResource( 1 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[connection signal="input_event" from="Button/Area2D" to="Button" method="_on_input_event"]
+
+[connection signal="mouse_entered" from="Button/Area2D" to="Button" method="_on_mouse_entered"]
+
+[connection signal="mouse_exited" from="Button/Area2D" to="Button" method="_on_mouse_exited"]
+
+

@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Stage.gd" type="Script" id=1]
+[ext_resource path="res://Resources/MetalPedestal.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Metal.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Components/Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Components/Termometer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Components/BackArrow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Nest.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Components/Egg.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Components/Timer.tscn" type="PackedScene" id=9]
+
+[node name="Stage03" type="Position2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="MetalPedestal" type="Sprite" parent="." index="0"]
+
+position = Vector2( 507.665, 500 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Metal" type="Sprite" parent="." index="1"]
+
+position = Vector2( 507.951, 249.066 )
+texture = ExtResource( 3 )
+
+[node name="Button" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 508.638, 363.107 )
+scale = Vector2( 0.457212, 0.457212 )
+termometer_node = NodePath("../Termometer")
+
+[node name="Termometer" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 507.383, 248.467 )
+rotation = -1.5708
+scale = Vector2( 0.457212, 0.457212 )
+upper_threshold = 0.55
+lower_threshold = 0.45
+
+[node name="Arrow" parent="." index="4" instance=ExtResource( 6 )]
+
+[node name="Nest" type="Sprite" parent="." index="5"]
+
+position = Vector2( 507.477, 207.195 )
+texture = ExtResource( 7 )
+
+[node name="Egg" parent="." index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 507.833, 152.408 )
+scale = Vector2( 0.31277, 0.31277 )
+
+[node name="Timer" parent="." index="7" instance=ExtResource( 9 )]
+
+[connection signal="pressed" from="Arrow" to="." method="_on_back_pressed"]
+
+

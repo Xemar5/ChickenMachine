@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Stage.gd" type="Script" id=1]
+[ext_resource path="res://Resources/MetalPedestal.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Metal.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Components/Termometer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Components/Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Components/Handle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Nest.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Components/Egg.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Components/BackArrow.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Components/Timer.tscn" type="PackedScene" id=10]
+
+[node name="Stage06" type="Position2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="MetalPedestal" type="Sprite" parent="." index="0"]
+
+position = Vector2( 514.401, 500 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Metal" type="Sprite" parent="MetalPedestal" index="0"]
+
+position = Vector2( 122.002, -69.0715 )
+rotation = 1.5708
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Metal2" type="Sprite" parent="MetalPedestal" index="1"]
+
+position = Vector2( 120.641, -243.199 )
+rotation = 1.5708
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Metal3" type="Sprite" parent="MetalPedestal" index="2"]
+
+position = Vector2( -106.504, -238.189 )
+rotation = 1.5708
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Metal4" type="Sprite" parent="MetalPedestal" index="3"]
+
+position = Vector2( -107.504, -72.1888 )
+rotation = 1.5708
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Termometer" parent="." index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 681.256, 345.556 )
+scale = Vector2( 0.584915, 0.584915 )
+upper_threshold = 1.0
+lower_threshold = 0.6
+decay = 0.998
+
+[node name="Termometer2" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 358.911, 348.545 )
+scale = Vector2( 0.584915, 0.584915 )
+upper_threshold = 1.0
+lower_threshold = 0.6
+decay = 0.998
+
+[node name="Button" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 517.429, 245.579 )
+scale = Vector2( 0.404774, 0.404774 )
+termometer_node = NodePath("../Termometer")
+
+[node name="Pedestal" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 519.271, 428.917 )
+scale = Vector2( 0.421779, 0.421779 )
+termometer_node = NodePath("../Termometer2")
+
+[node name="Nest" type="Sprite" parent="." index="5"]
+
+position = Vector2( 683.752, 209.074 )
+texture = ExtResource( 7 )
+
+[node name="Nest2" type="Sprite" parent="." index="6"]
+
+position = Vector2( 350.641, 213.626 )
+texture = ExtResource( 7 )
+
+[node name="Egg" parent="." index="7" instance=ExtResource( 8 )]
+
+position = Vector2( 352.967, 142.749 )
+scale = Vector2( 0.349122, 0.349123 )
+
+[node name="Egg2" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 682.967, 139.749 )
+scale = Vector2( 0.349122, 0.349123 )
+
+[node name="Arrow" parent="." index="9" instance=ExtResource( 9 )]
+
+[node name="Timer" parent="." index="10" instance=ExtResource( 10 )]
+
+[connection signal="pressed" from="Arrow" to="." method="_on_back_pressed"]
+
+

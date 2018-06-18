@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Resources/Egg/Egg1.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Egg/Egg2.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Egg/Egg3.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Egg/Egg4.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Egg/Egg5.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Egg/Egg6.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Egg/EggLower.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Egg.gd" type="Script" id=8]
+[ext_resource path="res://Resources/Egg/EggUpper.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/EggUpper.gd" type="Script" id=10]
+[ext_resource path="res://Resources/Angry.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Egg" type="AnimatedSprite" index="0"]
+
+frames = SubResource( 1 )
+animation = "default"
+script = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+hatch_speed = 0.1
+reverse_hatch_speed = 0.3
+done = false
+
+[node name="EggUpper" type="Sprite" parent="." index="0"]
+
+visible = false
+texture = ExtResource( 9 )
+offset = Vector2( 0, -83 )
+script = ExtResource( 10 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Angry" type="Sprite" parent="." index="1"]
+
+visible = false
+position = Vector2( 101.858, -133.37 )
+rotation = 1.5708
+scale = Vector2( 0.591741, 0.591741 )
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( 0, -262 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+

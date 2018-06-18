@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/BackgroundBlured.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Table.png" type="Texture" id=2]
+
+[node name="BackgroundBlured" type="Sprite" index="0"]
+
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Table" type="Sprite" parent="." index="0"]
+
+position = Vector2( 523.346, 601.903 )
+texture = ExtResource( 2 )
+
+

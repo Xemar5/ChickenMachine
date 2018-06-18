@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cm_click1.wav-b5a09f4aff8f09d9a2f6523c687879e4.sample"
+
+[deps]
+
+source_file="res://Resources/cm_click1.wav"
+dest_files=[ "res://.import/cm_click1.wav-b5a09f4aff8f09d9a2f6523c687879e4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

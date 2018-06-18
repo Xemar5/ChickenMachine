@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Stage.gd" type="Script" id=1]
+[ext_resource path="res://Resources/MetalPedestal.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Metal.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Components/Handle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Components/Termometer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Nest.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Components/Egg.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Components/BackArrow.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Components/Timer.tscn" type="PackedScene" id=9]
+
+[node name="Stage05" type="Position2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="MetalPedestal" type="Sprite" parent="." index="0"]
+
+position = Vector2( 661.314, 500 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MetalPedestal2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 384.447, 500 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Metal" type="Sprite" parent="." index="2"]
+
+position = Vector2( 385.357, 404.031 )
+texture = ExtResource( 3 )
+
+[node name="Pedestal" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 662.468, 369.217 )
+scale = Vector2( 0.450671, 0.450671 )
+termometer_node = NodePath("../Termometer")
+
+[node name="Termometer" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 385.049, 449.426 )
+rotation = 1.5708
+scale = Vector2( 0.573869, 0.573869 )
+
+[node name="Nest" type="Sprite" parent="." index="5"]
+
+position = Vector2( 381.276, 363.22 )
+texture = ExtResource( 6 )
+
+[node name="Egg" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 383.581, 291.813 )
+scale = Vector2( 0.350359, 0.350359 )
+
+[node name="Arrow" parent="." index="7" instance=ExtResource( 8 )]
+
+[node name="Timer" parent="." index="8" instance=ExtResource( 9 )]
+
+[connection signal="pressed" from="Arrow" to="." method="_on_back_pressed"]
+
+

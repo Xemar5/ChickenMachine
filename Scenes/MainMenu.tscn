@@ -1,0 +1,310 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Resources/MetalPedestal.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Metal.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Label.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Button.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Coin.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+
+hinting = 2
+font_path = "res://Resources/Code New Roman.otf"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 120
+use_mipmaps = false
+use_filter = false
+extra_spacing_char = 30
+font_data = SubResource( 1 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 127.055
+height = 638.734
+
+[node name="Menu" type="Position2D" index="0"]
+
+script = ExtResource( 1 )
+play_stage_path = "res://Scenes/LevelSelector.tscn"
+credits_stage_path = "res://Scenes/Credits.tscn"
+
+[node name="MetalPedestal" type="Sprite" parent="." index="0"]
+
+position = Vector2( 513.985, 500 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Metal" type="Sprite" parent="." index="1"]
+
+position = Vector2( 514, 351 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Metal2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 514, 208 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Metal3" type="Sprite" parent="." index="3"]
+
+position = Vector2( 342.503, 212.315 )
+rotation = 0.510922
+texture = ExtResource( 3 )
+
+[node name="Metal4" type="Sprite" parent="." index="4"]
+
+position = Vector2( 575.981, 352.335 )
+rotation = -0.641963
+texture = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 516.326, 152.557 )
+rotation = -0.0302986
+scale = Vector2( 0.410185, 0.410185 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Sprite" parent="Node2D" index="0"]
+
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="Node2D/Label" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -390.0
+margin_top = -88.0
+margin_right = 390.0
+margin_bottom = 88.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.300781, 0.300781, 0.300781, 1 )
+text = "Play"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Area2D" type="Area2D" parent="Node2D/Label" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Label/Area2D" index="0"]
+
+visible = false
+rotation = 1.5708
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Node2D2" type="Node2D" parent="." index="6"]
+
+position = Vector2( 393.584, 154.516 )
+rotation = 0.0258746
+scale = Vector2( 0.410185, 0.410185 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label2" type="Sprite" parent="Node2D2" index="0"]
+
+position = Vector2( 0, 328.644 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Pause", "Transform" ]
+
+[node name="Label" type="Label" parent="Node2D2/Label2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -390.0
+margin_top = -88.0
+margin_right = 390.0
+margin_bottom = 88.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.300781, 0.300781, 0.300781, 1 )
+text = "Credits"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Area2D" type="Area2D" parent="Node2D2/Label2" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Label2/Area2D" index="0"]
+
+visible = false
+rotation = 1.5708
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Node2D3" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 612.147, 147.232 )
+rotation = -0.140794
+scale = Vector2( 0.410185, 0.410185 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label3" type="Sprite" parent="Node2D3" index="0"]
+
+position = Vector2( 0, 653.586 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Node2D3/Label3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -390.0
+margin_top = -88.0
+margin_right = 390.0
+margin_bottom = 88.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.300781, 0.300781, 0.300781, 1 )
+text = "Exit"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Area2D" type="Area2D" parent="Node2D3/Label3" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/Label3/Area2D" index="0"]
+
+visible = false
+rotation = 1.5708
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Coin" type="Sprite" parent="." index="8"]
+
+position = Vector2( 376.048, 524.051 )
+rotation = -0.0131728
+scale = Vector2( 0.288427, 0.288427 )
+texture = ExtResource( 6 )
+
+[node name="Coin2" type="Sprite" parent="." index="9"]
+
+position = Vector2( 376.862, 515.906 )
+rotation = -0.0131728
+scale = Vector2( 0.288427, 0.288427 )
+texture = ExtResource( 6 )
+
+[node name="Coin5" type="Sprite" parent="." index="10"]
+
+position = Vector2( 620.63, 524.77 )
+rotation = 0.217016
+scale = Vector2( 0.288427, 0.288427 )
+texture = ExtResource( 6 )
+
+[node name="Coin3" type="Sprite" parent="." index="11"]
+
+position = Vector2( 386.636, 506.946 )
+rotation = -0.0131728
+scale = Vector2( 0.288427, 0.288427 )
+texture = ExtResource( 6 )
+
+[node name="Coin4" type="Sprite" parent="." index="12"]
+
+position = Vector2( 432.249, 511.833 )
+rotation = 0.734439
+scale = Vector2( 0.288427, 0.288427 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="Node2D/Label" to="." method="_on_play_pressed"]
+
+[connection signal="input_event" from="Node2D/Label/Area2D" to="Node2D/Label" method="_on_input_event"]
+
+[connection signal="mouse_entered" from="Node2D/Label/Area2D" to="Node2D/Label" method="_on_mouse_entered"]
+
+[connection signal="mouse_exited" from="Node2D/Label/Area2D" to="Node2D/Label" method="_on_mouse_exited"]
+
+[connection signal="pressed" from="Node2D2/Label2" to="." method="_on_credits_pressed"]
+
+[connection signal="input_event" from="Node2D2/Label2/Area2D" to="Node2D2/Label2" method="_on_input_event"]
+
+[connection signal="mouse_entered" from="Node2D2/Label2/Area2D" to="Node2D2/Label2" method="_on_mouse_entered"]
+
+[connection signal="mouse_exited" from="Node2D2/Label2/Area2D" to="Node2D2/Label2" method="_on_mouse_exited"]
+
+[connection signal="mouse_exited" from="Node2D2/Label2/Area2D" to="Node2D2/Label2" method="_o_mouse_exited"]
+
+[connection signal="pressed" from="Node2D3/Label3" to="." method="_on_exit_pressed"]
+
+[connection signal="input_event" from="Node2D3/Label3/Area2D" to="Node2D3/Label3" method="_on_input_event"]
+
+[connection signal="mouse_entered" from="Node2D3/Label3/Area2D" to="Node2D3/Label3" method="_on_mouse_entered"]
+
+[connection signal="mouse_exited" from="Node2D3/Label3/Area2D" to="Node2D3/Label3" method="_on_mouse_exited"]
+
+

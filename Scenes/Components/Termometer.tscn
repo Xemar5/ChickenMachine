@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/Termometer.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Temperature.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Threshold.png" type="Texture" id=3]
+[ext_resource path="res://Resources/ThresholdGood.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Marker.png" type="Texture" id=5]
+
+[node name="Termometer" type="Sprite" index="0"]
+
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Region", "Transform" ]
+upper_threshold = 0.6
+lower_threshold = 0.4
+decay = 0.996
+temperature = 0.0
+done = false
+
+[node name="UpperThreshold" type="Sprite" parent="." index="0"]
+
+visible = false
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LowerThreshold" type="Sprite" parent="." index="1"]
+
+visible = false
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="UpperThresholdGood" type="Sprite" parent="." index="2"]
+
+visible = false
+texture = ExtResource( 4 )
+
+[node name="LowerThresholdGood" type="Sprite" parent="." index="3"]
+
+visible = false
+texture = ExtResource( 4 )
+
+[node name="Marker" type="Sprite" parent="." index="4"]
+
+position = Vector2( -20, 0 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cm_boo.wav-940a73c1c5c29f45f626df7988535c85.sample"
+
+[deps]
+
+source_file="res://Resources/cm_boo.wav"
+dest_files=[ "res://.import/cm_boo.wav-940a73c1c5c29f45f626df7988535c85.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
